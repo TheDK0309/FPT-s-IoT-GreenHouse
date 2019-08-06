@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/tabplace"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_margin"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/nameNoti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="@dimen/fab_margin"
+            android:text="Notifications"
+            android:textColor="@color/primary_text_default_material_dark"
+            android:textSize="@dimen/big_textsize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/alarmText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/fab_margin"
+            android:text="00 alarm"
+            android:textSize="@dimen/small_textsize" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/greyBar"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@id/nameNoti"
+        android:background="#DDDDDD"/>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/tabplace"
+        android:layout_below="@id/greyBar">
+
+        <ListView
+            android:id="@+id/notiList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</RelativeLayout>

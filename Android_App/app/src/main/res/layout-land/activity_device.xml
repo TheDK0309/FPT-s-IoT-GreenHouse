@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DeviceActivity">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/gradient_horizontal">
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000"
+                android:drawableLeft="@drawable/arrow_left"
+                android:text="Back"
+                android:textColor="@color/colorWhite" />
+
+            <ImageView
+                android:id="@+id/smallLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_big"
+                android:layout_toRightOf="@id/btnBack"
+                android:adjustViewBounds="true"
+                android:maxHeight="60dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/white_logo" />
+
+            <ImageView
+                android:id="@+id/bigLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/smallLogo"
+                android:adjustViewBounds="true"
+                android:maxHeight="60dp"
+                android:scaleType="center"
+                android:scaleX="1"
+                android:scaleY="1"
+                android:src="@drawable/rss_header_bg" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_big"
+                android:layout_marginVertical="8dp"
+                android:layout_toRightOf="@id/smallLogo"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/deviceName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Device"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/big_textsize"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/connectIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:adjustViewBounds="true"
+                        android:maxHeight="10dp"
+                        android:maxWidth="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/status_light"
+                        android:tint="#b1ff90" />
+
+                    <TextView
+                        android:id="@+id/connectText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/connectIcon"
+                        android:text="Connected"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/small_textsize" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/batteryIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:adjustViewBounds="true"
+                        android:maxHeight="10dp"
+                        android:maxWidth="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/status_light"
+                        android:tint="#b1ff90" />
+
+                    <TextView
+                        android:id="@+id/batteryText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/batteryIcon"
+                        android:text="Battery 100%"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/small_textsize" />
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/AlarmIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="15dp"
+                    android:maxWidth="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/status_light"
+                    android:tint="#b1ff90" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <TextView
+                    android:id="@+id/dateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:10  15/06/2018"
+                    android:textColor="#AAAAAA" />
+
+                <TextView
+                    android:id="@+id/alarmDevice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/fab_margin"
+                    android:text="Alarm:"
+                    android:textSize="@dimen/small_textsize" />
+            </LinearLayout>
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintDimensionRatio="H,1:1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/gradient_45degree_peach"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:id="@+id/temperatureIcon"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:adjustViewBounds="true"
+                                            android:maxHeight="@dimen/normal_iconsize"
+                                            android:maxWidth="@dimen/normal_iconsize"
+                                            android:scaleType="fitCenter"
+                                            android:src="@drawable/temperature" />
+
+                                        <TextView
+                                            android:id="@+id/temperatureValue"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginVertical="8dp"
+                                            android:text="0"
+                                            android:textColor="@color/colorWhite"
+                                            android:textSize="@dimen/normal_textsize"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="temperature"
+                                        android:textAlignment="center"
+                                        android:textAllCaps="true"
+                                        android:paddingVertical="2dp"
+                                        android:textSize="@dimen/normal_textsize"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/gradient_45degree_mint"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:id="@+id/humidityIcon"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:adjustViewBounds="true"
+                                            android:maxHeight="@dimen/normal_iconsize"
+                                            android:maxWidth="@dimen/normal_iconsize"
+                                            android:scaleType="fitCenter"
+                                            android:src="@drawable/humidity" />
+
+                                        <TextView
+                                            android:id="@+id/humidityValue"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginVertical="8dp"
+                                            android:text="0%"
+                                            android:textColor="@color/colorWhite"
+                                            android:textSize="@dimen/normal_textsize"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Humidity"
+                                        android:textAlignment="center"
+                                        android:textAllCaps="true"
+                                        android:paddingVertical="2dp"
+                                        android:textSize="@dimen/normal_textsize"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/gradient_45degree_sea"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:id="@+id/moistureIcon"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:adjustViewBounds="true"
+                                            android:maxHeight="@dimen/normal_iconsize"
+                                            android:maxWidth="@dimen/normal_iconsize"
+                                            android:scaleType="fitCenter"
+                                            android:src="@drawable/moisture" />
+
+                                        <TextView
+                                            android:id="@+id/moistValue"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginVertical="8dp"
+                                            android:text="0%"
+                                            android:textColor="@color/colorWhite"
+                                            android:textSize="@dimen/normal_textsize"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Soil moisture"
+                                        android:paddingVertical="2dp"
+                                        android:textAlignment="center"
+                                        android:textAllCaps="true"
+                                        android:textSize="@dimen/normal_textsize"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/gradient_45degree_taro"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:id="@+id/lightIcon"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:adjustViewBounds="true"
+                                            android:maxHeight="@dimen/normal_iconsize"
+                                            android:maxWidth="@dimen/normal_iconsize"
+                                            android:scaleType="fitCenter"
+                                            android:src="@drawable/light" />
+
+                                        <TextView
+                                            android:id="@+id/lightValue"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginVertical="8dp"
+                                            android:text="0 lux"
+                                            android:textColor="@color/colorWhite"
+                                            android:textSize="@dimen/normal_textsize"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingVertical="2dp"
+                                        android:text="Light"
+                                        android:textAlignment="center"
+                                        android:textAllCaps="true"
+                                        android:textSize="@dimen/normal_textsize"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.constraint.ConstraintLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="000dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/fab_margin"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/btnPump"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="pump off" />
+
+                    <TextView
+                        android:id="@+id/pumpText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Pump: "
+                        android:textSize="@dimen/big_textsize" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/btnLED"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="LED off" />
+
+                    <TextView
+                        android:id="@+id/ledText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_toLeftOf="@id/btnLED"
+                        android:text="LED: "
+                        android:textSize="@dimen/big_textsize" />
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="updateAWS"
+                    android:text="update" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="350dp"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp">
+
+                <Button
+                    android:id="@+id/chartName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:background="#00000000"
+                    android:drawableRight="@drawable/arrow_down_2"
+                    android:text="Temperature chart" />
+
+                <Button
+                    android:id="@+id/chartDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/btn_bg"
+                    android:drawableRight="@drawable/arrow_down_2"
+                    android:text="week" />
+
+                <TextView
+                    android:id="@+id/chartTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/chartName"
+                    android:text="01/06/2018 - 07/06/2018"
+                    android:textColor="#AAAAAA" />
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/chartTime"
+                    android:text="Chart here"
+                    android:textAlignment="center" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/locationText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/fab_margin"
+                    android:text="Location"
+                    android:textSize="@dimen/normal_textsize"
+                    android:textStyle="bold" />
+
+                <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:map="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+</RelativeLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/color_status"
+        android:layout_width="3dp"
+        android:layout_height="match_parent"
+        android:background="#1c7c1b"
+        android:layout_centerVertical="true"/>
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:adjustViewBounds="true"
+        android:maxWidth="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/arrow_right" />
+
+        <ImageView
+            android:id="@+id/deviceIcon"
+            android:layout_toRightOf="@id/color_status"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="16dp"
+            android:adjustViewBounds="true"
+            android:maxHeight="80dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/device_list" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/deviceIcon"
+            android:layout_toLeftOf="@id/arrow"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:text="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/normal_textsize" />
+
+            <TextView
+                android:id="@+id/subTextView"
+                android:text="subtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="#CCCCCC"
+                android:textSize="@dimen/small_textsize" />
+        </LinearLayout>
+</RelativeLayout>

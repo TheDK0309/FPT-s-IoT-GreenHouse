@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.t_anh.iot_aws.MainActivity">
+    <item
+        android:id="@+id/hour_long"
+        android:orderInCategory="0"
+        android:title="@string/hour_long"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/day_long"
+        android:orderInCategory="0"
+        android:title="@string/day_long"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/week_long"
+        android:orderInCategory="1"
+        android:title="@string/week_long"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/month_long"
+        android:orderInCategory="2"
+        android:title="@string/month_long"
+        app:showAsAction="never" />
+</menu>
