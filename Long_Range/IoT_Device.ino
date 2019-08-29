@@ -110,13 +110,7 @@ void SendDataTest(byte buff[], int len)
   }
   Serial.println();
 }
-void flashLED(int t)
-{
-  digitalWrite(LED_BUILTIN, HIGH);    // turn the LED on (HIGH is the voltage level)
-  delay(t);                           // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);     // turn the LED off by making the voltage LOW
-  delay(t);
-}
+
 int  serIn;             // var that will hold the bytes-in read from the serialBuffer
 char serInString[100];  // array that will hold the different bytes  100=100characters;
                         // -> you must state how long the array will be else it won't work.
