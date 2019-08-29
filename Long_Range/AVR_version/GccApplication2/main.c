@@ -159,13 +159,3 @@ void UART_SendString(char *){
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
